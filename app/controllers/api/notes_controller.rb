@@ -1,55 +1,55 @@
 module Api
   class NotesController < ApplicationController
-    before_action :set_note, only: [:show, :update, :destroy]
+    before_action :set_api_note, only: [:show, :update, :destroy]
 
-    # GET /notes
-    # GET /notes.json
+    # GET /api/notes
+    # GET /api/notes.json
     def index
-      @notes = Note.all
+      @api_notes = Note.all
     end
 
-    # GET /notes/1
-    # GET /notes/1.json
+    # GET /api/notes/1
+    # GET /api/notes/1.json
     def show
     end
 
-    # POST /notes
-    # POST /notes.json
+    # POST /api/notes
+    # POST /api/notes.json
     def create
-      @note = Note.new(note_params)
+      @api_note = Note.new(api_note_params)
 
-      if @note.save
-        render :show, status: :created, location: @note
+      if @api_note.save
+        render :show, status: :created, location: @api_note
       else
-        render json: @note.errors, status: :bad_request
+        render json: @api_note.errors, status: :bad_request
       end
     end
 
-    # PATCH/PUT /notes/1
-    # PATCH/PUT /notes/1.json
+    # PATCH/PUT /api/notes/1
+    # PATCH/PUT /api/notes/1.json
     def update
-      if @note.update(note_params)
-        render :show, status: :ok, location: @note
+      if @api_note.update(api_note_params)
+        render :show, status: :ok, location: @api_note
       else
-        render json: @note.errors, status: :unprocessable_entity
+        render json: @api_note.errors, status: :unprocessable_entity
       end
     end
 
-    # DELETE /notes/1
-    # DELETE /notes/1.json
+    # DELETE /api/notes/1
+    # DELETE /api/notes/1.json
     def destroy
-      @note.destroy
+      @api_note.destroy
     end
 
     private
       # Use callbacks to share common setup or constraints between actions.
-      def set_note
-        @note = Note.find(params[:id])
+      def set_api_note
+        @api_note = Note.find(params[:id])
       end
 
       # Never trust parameters from the scary internet, only allow the white list through.
-      def note_params
-        params.fetch(:note, {})
+      def api_note_params
+        params.fetch(:api_note, {})
       end
   end
 end
