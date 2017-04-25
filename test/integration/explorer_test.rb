@@ -11,6 +11,7 @@ class ExplorerTest < ActionDispatch::IntegrationTest
     get '/api/notes.json'
     assert_equal 200, status
     json = JSON.parse(response.body)
+    ap json
     assert json['notes']
     assert json['notes'].length == 10
   end
