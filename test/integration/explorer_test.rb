@@ -55,7 +55,6 @@ class ExplorerTest < ActionDispatch::IntegrationTest
     assert_equal "Title can't be blank", json['errors'].first['error']
   end
 
-
   private
 
   def example_note(note)

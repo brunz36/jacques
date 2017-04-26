@@ -2,6 +2,12 @@ module Api
   class NotesController < ApplicationController
     before_action :set_api_note, only: [:show, :update, :destroy]
 
+    def for_tag
+      @tag_name = params[:tag_name]
+
+      @api_notes = Tag.find_by(name: @tag_name).notes
+    end
+
     # GET /api/notes
     # GET /api/notes.json
     def index
@@ -17,8 +23,6 @@ module Api
     # POST /api/notes.json
     def create
       @api_note = Note.new(api_note_params)
-
-      # @api_note.tags = params[:tags].split(",").map { |name| name.strip }.map { |tag_name| Tag.find_or_create_by(name: tag_name)}
 
       tags = params[:tags]
       tag_names = tags.split(',').map { |name| name.strip }
