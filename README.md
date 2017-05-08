@@ -1,24 +1,20 @@
-## README
+# Jacques
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### TIY Week 7 Day 1 &dash; Cohort 7
 
-Things you may want to cover:
+### **[The Iron Yard](http://theironyard.com)** Cohort 7 &dash; Ruby On Rails Back-End Engineer
 
-* Ruby version
+#### This was an assignment where we received parameters from a Front-End
+#### Designer with a set of tests. I had to create an API to pass test.
 
-* System dependencies
+- This application shows the use of the following technologies:
+  - Ruby
+  - Rails
+  - Jbuilder
+- The major features of the application are:
+  - API creation
+  - Test Driven Development
+  - JSON
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## DEMO
+![](https://raw.githubusercontent.com/brunz36/jacques/master/docs/jacques.gif)
